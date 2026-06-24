@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nav Can Movers Express — Marketplace Pickup & Delivery · Montreal</title>
+<meta name="description" content="Bought it on Marketplace or Kijiji? We pick it up and deliver it. Pickup-truck delivery across Montreal at honestly good prices. / Livraison en camionnette pour vos trouvailles à Montréal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; background: #0c0c0c; }
+  body { -webkit-font-smoothing: antialiased; }
+  ::selection { background: #fefefe; color: #0c0c0c; }
+  img { display: block; }
+  @keyframes ncm-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ncm-mask { display: block; overflow: hidden; padding-bottom:0.04em; }
+  .ncm-line { display: block; transform: translateY(115%); transition: transform 1s cubic-bezier(.16,1,.3,1); }
+  .ncm-hero.is-in .ncm-line { transform: translateY(0); }
+  [data-reveal] { opacity: 0; transform: translateY(48px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+  [data-reveal].is-in { opacity: 1; transform: none; }
+  .ncm-hov { transition: transform .5s cubic-bezier(.16,1,.3,1); }
+  .ncm-hovwrap:hover .ncm-hov { transform: scale(1.04); }
+  .muted { color:#7a7a7a; }
+  .accent { color: var(--accent,#E63329); }
+  /* language toggle */
+  .ncm-lang { display:flex; align-items:center; gap:2px; border:1px solid #2f2f2f; border-radius:9px; overflow:hidden; }
+  .ncm-lang button { font-family:'Archivo',sans-serif; background:transparent; color:#9a9a9a; border:0; cursor:pointer;
+    font-size:12px; font-weight:800; letter-spacing:0.06em; padding:9px 12px; text-transform:uppercase; transition:background .2s,color .2s; }
+  .ncm-lang button[aria-pressed="true"] { background:var(--accent,#E63329); color:#fff; }
+
+  /* ============ PREMIUM POLISH ============ */
+  /* refined custom scrollbar */
+  * { scrollbar-width: thin; scrollbar-color: #2a2a2a #0c0c0c; }
+  ::-webkit-scrollbar { width: 11px; height: 11px; }
+  ::-webkit-scrollbar-track { background: #0c0c0c; }
+  ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 10px; border: 3px solid #0c0c0c; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent,#E63329); }
+
+  /* film-grain texture (editorial richness) */
+  .ncm-grain { position: fixed; inset: 0; z-index: 9998; pointer-events: none; opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px; }
+
+  /* scroll-progress hairline */
+  .ncm-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 9999; pointer-events: none;
+    background: linear-gradient(90deg, var(--accent,#E63329), #ff7a6b); box-shadow: 0 0 14px rgba(230,51,41,0.55); }
+
+  /* premium sticky header (frosted on scroll) */
+  #ncm-root header { transition: background .45s ease, backdrop-filter .45s ease, padding .45s ease, border-color .45s ease;
+    border-bottom: 1px solid transparent; }
+  #ncm-root header[data-scrolled="true"] { background: rgba(12,12,12,0.72);
+    -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+    border-bottom-color: rgba(255,255,255,0.08); padding-top: 16px; padding-bottom: 16px; }
+  #ncm-root header a img { transition: transform .5s cubic-bezier(.16,1,.3,1), box-shadow .4s ease; }
+  #ncm-root header a:hover img { transform: translateY(-2px) rotate(-1.5deg); box-shadow: 0 10px 26px rgba(0,0,0,0.55); }
+
+  /* nav links: elegant animated underline */
+  .ncm-navlink { position: relative; }
+  .ncm-navlink::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -6px; height: 1.5px;
+    background: var(--accent,#E63329); transition: right .45s cubic-bezier(.16,1,.3,1); }
+  .ncm-navlink:hover::after { right: 0; }
+
+  /* CTA buttons: refined hover lift + glow */
+  .ncm-cta { transition: transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s cubic-bezier(.16,1,.3,1), filter .3s ease;
+    will-change: transform; }
+  .ncm-cta:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(230,51,41,0.38); filter: brightness(1.06); }
+  .ncm-cta:active { transform: translateY(-1px); }
+
+  /* hero scroll cue */
+  .ncm-scrollcue { position: absolute; left: 32px; bottom: 26px; z-index: 3; display: flex; align-items: center; gap: 12px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
+  .ncm-scrollcue .ln { width: 46px; height: 1px; background: rgba(255,255,255,0.32); position: relative; overflow: hidden; }
+  .ncm-scrollcue .ln::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 45%;
+    background: var(--accent,#E63329); animation: ncm-cue 2.6s cubic-bezier(.16,1,.3,1) infinite; }
+  @keyframes ncm-cue { 0% { transform: translateX(-130%); } 60%, 100% { transform: translateX(320%); } }
+
+  @media (max-width: 640px) { .ncm-scrollcue { display: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .ncm-scrollcue .ln::after { animation: none; }
+    .ncm-cta, #ncm-root header a img, .ncm-navlink::after { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="ncm-root" style="--accent:#E63329;font-family:'Archivo',sans-serif;background:#0c0c0c;color:#fefefe;overflow-x:hidden;">
+
+  <div class="ncm-grain" aria-hidden="true"></div>
+  <div class="ncm-progress" id="ncm-progress" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header style="position:sticky;top:0;z-index:60;display:flex;align-items:flex-start;justify-content:space-between;padding:26px 32px;background:linear-gradient(to bottom,rgba(12,12,12,0.92),rgba(12,12,12,0));">
+    <a href="#" aria-label="Nav Can Déménagement Express — back to top" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;">
+      <img src="assets/img/logo.jpg" alt="Nav Can Déménagement Express logo" width="1254" height="1254" style="width:56px;height:56px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,0.14);box-shadow:0 4px 18px rgba(0,0,0,0.45);flex:none;">
+      <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;line-height:1.18;letter-spacing:0.01em;text-transform:uppercase;">
+        <span data-i18n="brand.name">Nav Can Movers Express</span><span style="vertical-align:super;font-size:0.6em;">®</span><br>
+        <span style="font-weight:600;color:#9a9a9a;font-size:0.82em;letter-spacing:0.04em;" data-i18n="brand.tag">Marketplace Pickup &amp; Delivery</span>
+      </span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:flex-end;">
+      <a href="#services" data-i18n="nav.services" class="ncm-navlink" style="font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#fefefe;text-decoration:none;">Services</a>
+      <a href="#process" data-i18n="nav.process" class="ncm-navlink" style="font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#fefefe;text-decoration:none;">Process</a>
+      <div class="ncm-lang">
+        <button data-lang-btn="en" aria-pressed="true">EN</button>
+        <button data-lang-btn="fr" aria-pressed="false">FR</button>
+      </div>
+      <a href="tel:5149999176" class="ncm-cta" style="display:flex;align-items:center;gap:8px;background:var(--accent,#E63329);color:#fff;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;padding:11px 16px;border-radius:9px;">
+        <span style="width:7px;height:7px;border-radius:50%;background:#fff;"></span>514-999-9176
+      </a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:14vh 32px 8vh;box-sizing:border-box;overflow:hidden;margin-top:-92px;">
+    <!-- full-bleed background video -->
+    <video id="ncm-hero-vid" autoplay muted loop playsinline preload="auto" poster="assets/img/hero.jpg"
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:#0c0c0c;">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+    <!-- legibility overlay -->
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom, rgba(12,12,12,0.78) 0%, rgba(12,12,12,0.45) 38%, rgba(12,12,12,0.55) 70%, rgba(12,12,12,0.92) 100%);"></div>
+    <!-- content -->
+    <div style="position:relative;z-index:2;">
+      <h1 class="ncm-hero" style="margin:0;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:0.84;letter-spacing:-0.01em;font-size:clamp(3.5rem,13.5vw,15rem);text-shadow:0 4px 40px rgba(0,0,0,0.45);">
+        <span class="ncm-mask"><span class="ncm-line" style="display:block;" data-i18n="hero.l1">Bought it,</span></span>
+        <span class="ncm-mask"><span class="ncm-line" style="display:block;color:var(--accent,#E63329);transition-delay:0.12s;" data-i18n="hero.l3">We haul it.</span></span>
+      </h1>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-top:48px;" data-reveal>
+        <p data-i18n="hero.sub" style="max-width:560px;font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.45;color:#e6e6e6;margin:0;text-shadow:0 2px 18px rgba(0,0,0,0.6);">
+          You scored a deal on Marketplace or Kijiji — we pick it up and drop it at your door. Pickup-truck delivery across Montreal, at honestly good prices.
+        </p>
+        <a href="tel:5149999176" data-i18n="hero.cta" class="ncm-cta" style="flex:none;display:inline-flex;align-items:center;gap:12px;background:var(--accent,#E63329);color:#fff;text-decoration:none;font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;padding:18px 30px;border-radius:12px;letter-spacing:0.01em;">
+          Get a price →
+        </a>
+      </div>
+    </div>
+    <div class="ncm-scrollcue" aria-hidden="true"><span data-i18n="scroll">Scroll</span><span class="ln"></span></div>
+  </section>
+
+  <!-- ============ WHAT WE DO ============ -->
+  <section style="padding:110px 32px 100px;border-top:1px solid #1f1f1f;">
+    <div style="display:flex;gap:48px;align-items:flex-start;flex-wrap:wrap;" data-reveal>
+      <span data-i18n="wwd.tag" style="flex:none;width:160px;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent,#E63329);padding-top:14px;">( What We Do )</span>
+      <div style="flex:1;min-width:300px;">
+        <p data-i18n="wwd.head" style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.6vw,3.4rem);line-height:1.05;letter-spacing:-0.02em;margin:0 0 36px;text-wrap:balance;">
+          We don't just move boxes. We pick up the couch, the dresser, the fridge you just bought online — <span class="muted">carefully, same-day, and without the headache.</span>
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;max-width:760px;">
+          <p data-i18n="wwd.p1" style="font-size:1.05rem;line-height:1.55;color:#a8a8a8;margin:0;">Found something great on Facebook Marketplace, Kijiji or a yard sale but no way to bring it home? Our pickup truck and crew handle the lift, the drive and the delivery.</p>
+          <p data-i18n="wwd.p2" style="font-size:1.05rem;line-height:1.55;color:#a8a8a8;margin:0;">We work around your schedule, strap everything down, protect your find, and bring it straight to your place. No van rental, no begging friends, no scratched floors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARALLAX TRUCK BAND ============ -->
+  <section style="position:relative;height:92vh;min-height:520px;overflow:hidden;background:#000;">
+    <div id="ncm-parallax" style="position:absolute;inset:-12% 0;will-change:transform;">
+      <div style="position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 0%, #2a2a2a 0%, #0c0c0c 70%);"></div>
+      <img src="assets/img/band.jpg" alt="White pickup truck and white cargo van crossing a Montreal bridge at golden hour" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(12,12,12,0.55) 0%, rgba(12,12,12,0.25) 40%, rgba(12,12,12,0.85) 100%);"></div>
+    <div style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:48px 32px;box-sizing:border-box;">
+      <span data-reveal data-i18n="band.tag" style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent,#E63329);margin-bottom:16px;">( On The Road )</span>
+      <h2 data-reveal data-i18n="band.head" style="font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(1.9rem,4.4vw,4.6rem);line-height:0.92;letter-spacing:-0.01em;margin:0;max-width:22ch;">
+        Your Marketplace finds, delivered safely across <span class="accent">Montreal.</span>
+      </h2>
+    </div>
+  </section>
+
+  <!-- ============ KINETIC ============ -->
+  <section style="padding:60px 32px 100px;">
+    <div class="ncm-hero" data-reveal style="font-family:'Anton',sans-serif;text-transform:uppercase;line-height:0.84;letter-spacing:-0.01em;font-size:clamp(3.5rem,15vw,16rem);">
+      <div data-i18n="kin.1">We</div>
+      <div class="ncm-hovwrap" style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+        <span data-i18n="kin.2">Pick</span>
+        <img class="ncm-hov" src="assets/img/kinetic.jpg" alt="White pickup truck carrying boxes through a Montreal neighbourhood" style="flex:1;min-width:260px;height:clamp(180px,30vw,380px);object-fit:cover;object-position:center;border-radius:16px;">
+      </div>
+      <div data-i18n="kin.3">It</div>
+      <div class="accent" data-i18n="kin.4">Up</div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;margin-top:40px;" data-reveal>
+      <p data-i18n="kin.p" style="max-width:440px;font-size:1.1rem;line-height:1.5;color:#a8a8a8;margin:0;">Every pickup is different. We stay flexible, keep you posted by text, and adapt to whatever the seller's driveway throws at us.</p>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section id="process" style="padding:100px 32px 90px;border-top:1px solid #1f1f1f;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:60px;" data-reveal>
+      <h2 data-i18n="proc.head" style="font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(2.5rem,6vw,5.5rem);line-height:0.85;letter-spacing:-0.01em;margin:0;max-width:14ch;">How we keep it easy</h2>
+      <p data-i18n="proc.sub" style="max-width:360px;font-size:1.05rem;line-height:1.5;color:#a8a8a8;margin:0;">Three things we get right on every pickup — so getting your find home feels handled, not stressful.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;">
+      <div data-reveal class="ncm-hovwrap">
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.1em;color:var(--accent,#E63329);margin-bottom:14px;">( 1 )</div>
+        <div style="overflow:hidden;border-radius:14px;margin-bottom:22px;"><img class="ncm-hov" src="assets/img/step1.jpg" alt="Wrapping and strapping furniture inside a white cargo van" style="width:100%;height:300px;object-fit:cover;"></div>
+        <h3 data-i18n="proc.1.t" style="font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.9rem;line-height:0.95;margin:0 0 12px;">Careful Handling</h3>
+        <p data-i18n="proc.1.p" style="font-size:1rem;line-height:1.55;color:#a8a8a8;margin:0;">Furniture wrapped in blankets, straps over every load, nothing sliding around in the bed. Your bargain arrives in the same shape you bought it.</p>
+      </div>
+      <div data-reveal class="ncm-hovwrap" style="transition-delay:0.1s;">
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.1em;color:var(--accent,#E63329);margin-bottom:14px;">( 2 )</div>
+        <div style="overflow:hidden;border-radius:14px;margin-bottom:22px;"><img class="ncm-hov" src="assets/img/step2.jpg" alt="White cargo van delivering furniture across Montreal on time" style="width:100%;height:300px;object-fit:cover;"></div>
+        <h3 data-i18n="proc.2.t" style="font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.9rem;line-height:0.95;margin:0 0 12px;">On Time, Every Time</h3>
+        <p data-i18n="proc.2.p" style="font-size:1rem;line-height:1.55;color:#a8a8a8;margin:0;">Seller wants it gone today? We can usually pick up within hours and text you the whole way. Your schedule, not ours.</p>
+      </div>
+      <div data-reveal class="ncm-hovwrap" style="transition-delay:0.2s;">
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.1em;color:var(--accent,#E63329);margin-bottom:14px;">( 3 )</div>
+        <div style="overflow:hidden;border-radius:14px;margin-bottom:22px;"><img class="ncm-hov" src="assets/img/step3.jpg" alt="Friendly driver delivering a marketplace purchase to a customer's door" style="width:100%;height:300px;object-fit:cover;"></div>
+        <h3 data-i18n="proc.3.t" style="font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.9rem;line-height:0.95;margin:0 0 12px;">Honest Pricing</h3>
+        <p data-i18n="proc.3.p" style="font-size:1rem;line-height:1.55;color:#a8a8a8;margin:0;">Flat, upfront price based on distance and size — no surprise fees, no per-minute meter. You know the cost before we roll out.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section id="ncm-stats" style="background:var(--accent,#E63329);color:#fff;padding:84px 32px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;">
+      <div data-reveal>
+        <div style="font-family:'Anton',sans-serif;font-size:clamp(3rem,6vw,5rem);line-height:0.9;"><span data-count="10">0</span>+</div>
+        <div data-i18n="stat.1" style="font-size:0.95rem;font-weight:600;letter-spacing:0.03em;margin-top:8px;opacity:0.92;">Years hauling Montreal finds</div>
+      </div>
+      <div data-reveal style="transition-delay:0.08s;">
+        <div style="font-family:'Anton',sans-serif;font-size:clamp(3rem,6vw,5rem);line-height:0.9;"><span data-count="5000">0</span>+</div>
+        <div data-i18n="stat.2" style="font-size:0.95rem;font-weight:600;letter-spacing:0.03em;margin-top:8px;opacity:0.92;">Pickups delivered</div>
+      </div>
+      <div data-reveal style="transition-delay:0.16s;">
+        <div style="font-family:'Anton',sans-serif;font-size:clamp(3rem,6vw,5rem);line-height:0.9;"><span data-count="100">0</span>%</div>
+        <div data-i18n="stat.3" style="font-size:0.95rem;font-weight:600;letter-spacing:0.03em;margin-top:8px;opacity:0.92;">Loads strapped &amp; protected</div>
+      </div>
+      <div data-reveal style="transition-delay:0.24s;">
+        <div style="font-family:'Anton',sans-serif;font-size:clamp(3rem,6vw,5rem);line-height:0.9;">7/7</div>
+        <div data-i18n="stat.4" style="font-size:0.95rem;font-weight:600;letter-spacing:0.03em;margin-top:8px;opacity:0.92;">Days a week — weekends too</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services" style="padding:110px 32px 90px;">
+    <span data-i18n="svc.tag" style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent,#E63329);" data-reveal>( Our Services )</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;margin-top:40px;">
+      <div style="border-top:2px solid #fefefe;padding-top:24px;" data-reveal class="ncm-hovwrap">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;">
+          <h3 data-i18n="svc.1.t" style="font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(2rem,4vw,3.2rem);line-height:0.9;margin:0;max-width:12ch;">Marketplace Pickup</h3>
+          <span style="font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--accent,#E63329);">01</span>
+        </div>
+        <div style="overflow:hidden;border-radius:14px;margin-bottom:22px;"><img class="ncm-hov" src="assets/img/svc1.jpg" alt="Recent white cargo van on a Montreal street ready for a marketplace pickup" style="width:100%;height:320px;object-fit:cover;"></div>
+        <p data-i18n="svc.1.p" style="font-size:1.05rem;line-height:1.55;color:#a8a8a8;margin:0;">One couch, a table, a fridge — we meet the seller, load it in the truck and bring it to your door. Priced by the job, not padded by the hour.</p>
+      </div>
+      <div style="border-top:2px solid #fefefe;padding-top:24px;" data-reveal class="ncm-hovwrap">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;">
+          <h3 data-i18n="svc.2.t" style="font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(2rem,4vw,3.2rem);line-height:0.9;margin:0;max-width:12ch;">Furniture &amp; Big Items</h3>
+          <span style="font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--accent,#E63329);">02</span>
+        </div>
+        <div style="overflow:hidden;border-radius:14px;margin-bottom:22px;"><img class="ncm-hov" src="assets/img/svc2.jpg" alt="Two movers lifting a second-hand sofa into a white cargo van" style="width:100%;height:320px;object-fit:cover;"></div>
+        <p data-i18n="svc.2.p" style="font-size:1.05rem;line-height:1.55;color:#a8a8a8;margin:0;">Sofas, beds, appliances, that impossible armoire from three floors up — we've got the truck, the straps and the muscle to get it home in one piece.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section id="contact" style="padding:120px 32px;border-top:1px solid #1f1f1f;">
+    <div style="text-align:center;" data-reveal>
+      <h2 data-i18n="cta.head" style="font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(3rem,11vw,11rem);line-height:0.82;letter-spacing:-0.01em;margin:0;">Found it? Let's<br><span class="accent">bring it home.</span></h2>
+      <p data-i18n="cta.sub" style="max-width:480px;margin:32px auto 40px;font-size:1.15rem;line-height:1.5;color:#a8a8a8;">Send us the listing and your address. We'll give you a flat price and a pickup time that works.</p>
+      <a href="tel:5149999176" data-i18n="cta.btn" class="ncm-cta" style="display:inline-flex;align-items:center;gap:14px;background:var(--accent,#E63329);color:#fff;text-decoration:none;font-family:'Anton',sans-serif;font-size:clamp(1.6rem,3vw,2.6rem);text-transform:uppercase;padding:22px 44px;border-radius:14px;">
+        Call 514-999-9176
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div style="background:var(--accent,#E63329);color:#fff;padding:18px 0;overflow:hidden;white-space:nowrap;">
+    <div id="ncm-marquee" style="display:inline-flex;gap:48px;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.6rem;letter-spacing:0.02em;animation:ncm-marquee 22s linear infinite;will-change:transform;">
+      <span>Marketplace Pickup</span><span>·</span><span>Furniture &amp; Big Items</span><span>·</span><span>Montreal &amp; West Island</span><span>·</span><span>Same-Day Hauls</span><span>·</span><span>Honest Pricing</span><span>·</span>
+      <span>Marketplace Pickup</span><span>·</span><span>Furniture &amp; Big Items</span><span>·</span><span>Montreal &amp; West Island</span><span>·</span><span>Same-Day Hauls</span><span>·</span><span>Honest Pricing</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#0c0c0c;color:#fefefe;padding:80px 32px 40px;">
+    <div style="display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;border-bottom:1px solid #2a2a2a;padding-bottom:48px;">
+      <div style="max-width:360px;">
+        <img src="assets/img/logo.jpg" alt="Nav Can Déménagement Express logo" width="1254" height="1254" style="width:84px;height:84px;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,0.1);margin-bottom:18px;">
+        <div data-i18n="brand.name" style="font-family:'Anton',sans-serif;font-size:24px;text-transform:uppercase;margin-bottom:16px;">Nav Can Movers Express</div>
+        <p data-i18n="foot.about" style="font-size:1rem;line-height:1.5;color:#8a8a8a;margin:0;">Pickup-truck delivery for your Marketplace &amp; second-hand finds, proudly based in Montreal, Quebec.</p>
+      </div>
+      <div style="display:flex;gap:64px;flex-wrap:wrap;">
+        <div>
+          <div data-i18n="foot.touch" style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:14px;">Get in touch</div>
+          <a href="tel:5149999176" style="display:block;font-family:'Anton',sans-serif;font-size:1.5rem;color:#fefefe;text-decoration:none;margin-bottom:8px;">514-999-9176</a>
+          <a href="mailto:navcanmovers@gmail.com" style="display:block;font-size:1rem;color:#a8a8a8;text-decoration:none;">navcanmovers@gmail.com</a>
+        </div>
+        <div>
+          <div data-i18n="foot.area" style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:14px;">Service area</div>
+          <p data-i18n="foot.areas" style="font-size:1rem;line-height:1.5;color:#a8a8a8;margin:0;">Montreal Island<br>West Island · Laval<br>Greater Montreal</p>
+        </div>
+        <div>
+          <div data-i18n="foot.follow" style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:14px;">Follow</div>
+          <div style="display:flex;gap:10px;">
+            <a href="#" aria-label="Facebook" style="width:38px;height:38px;border-radius:8px;background:#fefefe;color:#0c0c0c;display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;font-size:13px;">Fb</a>
+            <a href="#" aria-label="Instagram" style="width:38px;height:38px;border-radius:8px;background:#fefefe;color:#0c0c0c;display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;font-size:13px;">In</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;font-size:13px;color:#666;">
+      <span data-i18n="foot.copy">© Nav Can Movers Express — Montreal, QC</span>
+      <span data-i18n="foot.lic">Licensed &amp; insured · RBQ on request</span>
+    </div>
+  </footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>
