@@ -10,8 +10,8 @@
       "nav.process": "Process",
       "hero.l1": "Bought it,",
       "hero.l3": "We haul it.",
-      "hero.sub": "You scored a deal on Marketplace or Kijiji — we pick it up and drop it at your door. Pickup-truck delivery across Montreal, at honestly good prices.",
-      "hero.cta": "Get a price →",
+      "hero.sub": "Montreal movers for your Marketplace finds, furniture delivery, apartment & office moves — picked up and dropped at your door, same-day, at honestly good prices.",
+      "hero.cta": "Get Free Quote →",
       "wwd.tag": "( What We Do )",
       "wwd.head": "We don't just move boxes. We pick up the couch, the dresser, the fridge you just bought online — <span class=\"muted\">carefully, same-day, and without the headache.</span>",
       "wwd.p1": "Found something great on Facebook Marketplace, Kijiji or a yard sale but no way to bring it home? Our pickup truck and crew handle the lift, the drive and the delivery.",
@@ -37,9 +37,78 @@
       "svc.1.p": "One couch, a table, a fridge — we meet the seller, load it in the truck and bring it to your door. Priced by the job, not padded by the hour.",
       "svc.2.t": "Furniture & Big Items",
       "svc.2.p": "Sofas, beds, appliances, that impossible armoire from three floors up — we've got the truck, the straps and the muscle to get it home in one piece.",
-      "cta.head": "Found it? Let's<br><span class=\"accent\">bring it home.</span>",
-      "cta.sub": "Send us the listing and your address. We'll give you a flat price and a pickup time that works.",
-      "cta.btn": "Call 514-999-9176",
+      "nav.reviews": "Reviews",
+      "nav.faq": "FAQ",
+      "nav.quote": "Free Quote",
+      "hero.cta2": "Call Now",
+      "svc.more.tag": "( More Ways We Help )",
+      "svc.3.t": "Furniture Delivery",
+      "svc.3.p": "Store pickups, showroom buys or seller drop-offs — furniture delivery across Montreal, handled with care.",
+      "svc.4.t": "Apartment Moving",
+      "svc.4.p": "Studios, 3½, 4½ and condos — fast, careful apartment moves with the lifting and the truck included.",
+      "svc.5.t": "Office Moving",
+      "svc.5.p": "Desks, chairs, equipment and files — office relocations done after hours or on weekends to limit downtime.",
+      "svc.6.t": "Mattress Delivery",
+      "svc.6.p": "New or used mattresses and box springs picked up and delivered, wrapped and protected the whole way.",
+      "svc.7.t": "Short-Term Storage",
+      "svc.7.p": "Between moves or waiting on a closing date? Keep your items safe in short-term warehouse storage.",
+      "quote.tag": "( Get a Free Quote )",
+      "quote.head": "Tell us what<br>you're moving.",
+      "quote.sub": "Fill in the details and tap send — your quote request goes straight to our WhatsApp and we'll reply with a flat price and a pickup time, fast. No obligation.",
+      "quote.perk1": "Same-day replies, 7 days a week",
+      "quote.perk2": "Reply by WhatsApp — send photos right in the chat",
+      "quote.perk3": "Flat, upfront pricing — no surprises",
+      "quote.f.name": "Your name",
+      "quote.f.pickup": "Pickup address",
+      "quote.f.delivery": "Delivery address",
+      "quote.f.date": "Preferred date",
+      "quote.f.phone": "Your phone",
+      "quote.f.items": "Item details",
+      "quote.f.photos": "Photos (optional)",
+      "quote.ph.name": "First & last name",
+      "quote.ph.pickup": "Where we pick up",
+      "quote.ph.delivery": "Where we drop off",
+      "quote.ph.phone": "(514) 000-0000",
+      "quote.ph.items": "e.g. 3-seat sofa + coffee table, 2nd floor, no elevator",
+      "quote.photos.hint": "You'll be asked to attach these in the WhatsApp chat that opens.",
+      "quote.submit": "Send via WhatsApp",
+      "quote.or": "Prefer to call?",
+      "rev.tag": "( Customer Reviews )",
+      "rev.head": "Trusted across<br>Montreal.",
+      "rev.count": "based on 120+ local jobs",
+      "rev.1.t": "Bought a sectional off Marketplace in Laval with no way to get it home. They picked it up same day, wrapped it, and set it up in my living room. Spotless.",
+      "rev.1.n": "— Marie-Pier L., Ahuntsic",
+      "rev.2.t": "Used them for a 4½ apartment move in the Plateau. On time, fast, careful with the walls and stairs. Way cheaper than the big moving companies.",
+      "rev.2.n": "— David R., Le Plateau",
+      "rev.3.t": "Mattress and bed frame delivered across the West Island within hours of me messaging on WhatsApp. Friendly, honest pricing, no surprises.",
+      "rev.3.n": "— Sarah K., Pierrefonds",
+      "faq.tag": "( FAQ )",
+      "faq.head": "Good<br>to know.",
+      "faq.sub": "Pricing, insurance, areas and the rest. Still have a question? <a href=\"#quote\" style=\"color:var(--accent,#E63329);text-decoration:none;font-weight:700;\">Ask us for a quote.</a>",
+      "faq.q1": "How much does it cost?",
+      "faq.a1": "Pricing is flat and upfront, based on distance, size and the number of items — not a per-minute meter. Send us the details for a free quote and you'll know the full price before we roll out.",
+      "faq.q2": "Are my items insured?",
+      "faq.a2": "Yes — we're insured and every load is wrapped in blankets and strapped down. Your items are protected from pickup to drop-off. Proof of insurance is available on request.",
+      "faq.q3": "Which areas do you serve?",
+      "faq.a3": "All of Montreal Island, the West Island, Laval and Greater Montreal. Going a bit further? Message us — we often cover the surrounding regions too.",
+      "faq.q4": "How fast can you come?",
+      "faq.a4": "Often the same day. We work 7 days a week, including weekends and evenings. Tell us your preferred date and we'll confirm a pickup time that works for you.",
+      "faq.q5": "Do you do full moves and storage?",
+      "faq.a5": "Yes — apartment moves, office moves, furniture and mattress delivery, plus short-term warehouse storage between moves or while you wait on a closing date.",
+      "faq.q6": "How do I pay?",
+      "faq.a6": "Interac e-Transfer, cash or card. You'll get the agreed flat price before the job — no hidden fees, no deposit games.",
+      "loc.tag": "( Find Us )",
+      "loc.head": "Based in<br>Montreal.",
+      "loc.addr.label": "Our address",
+      "loc.areas.label": "Service areas",
+      "loc.areas": "Montreal Island · West Island · Laval · Greater Montreal",
+      "loc.cta": "Get Directions →",
+      "cta.head": "Ready when<br><span class=\"accent\">you are.</span>",
+      "cta.sub": "Tell us what you're moving and where. We'll send a flat price and a pickup time that works — usually the same day.",
+      "cta.btn": "Get Free Quote",
+      "cta.btn2": "Book Your Move",
+      "cta.btn3": "Call Now",
+      "wa.label": "WhatsApp",
       "foot.about": "Pickup-truck delivery for your Marketplace & second-hand finds, proudly based in Montreal, Quebec.",
       "foot.touch": "Get in touch",
       "foot.area": "Service area",
@@ -57,8 +126,8 @@
       "nav.process": "Démarche",
       "hero.l1": "Acheté,",
       "hero.l3": "On le livre.",
-      "hero.sub": "Vous avez déniché une aubaine sur Marketplace ou Kijiji — on va la chercher et on la livre à votre porte. Livraison en camionnette partout à Montréal, à prix honnêtes.",
-      "hero.cta": "Obtenir un prix →",
+      "hero.sub": "Déménageurs à Montréal pour vos trouvailles Marketplace, livraison de meubles, déménagement d'appartement et de bureau — ramassé et livré à votre porte, le jour même, à prix honnêtes.",
+      "hero.cta": "Soumission gratuite →",
       "wwd.tag": "( Ce qu'on fait )",
       "wwd.head": "On ne déplace pas juste des boîtes. On ramasse le sofa, la commode, le frigo que vous venez d'acheter en ligne — <span class=\"muted\">avec soin, le jour même, et sans tracas.</span>",
       "wwd.p1": "Une belle trouvaille sur Facebook Marketplace, Kijiji ou une vente de garage mais aucun moyen de la ramener? Notre camionnette et notre équipe s'occupent du levage, du transport et de la livraison.",
@@ -84,9 +153,78 @@
       "svc.1.p": "Un sofa, une table, un frigo — on rencontre le vendeur, on charge le tout et on le livre chez vous. Prix au forfait, pas gonflé à l'heure.",
       "svc.2.t": "Meubles & gros articles",
       "svc.2.p": "Sofas, lits, électroménagers, cette armoire impossible au troisième étage — on a le camion, les sangles et les bras pour la ramener intacte.",
-      "cta.head": "Trouvé? On le<br><span class=\"accent\">ramène chez vous.</span>",
-      "cta.sub": "Envoyez-nous l'annonce et votre adresse. On vous donne un prix fixe et une heure de ramassage qui marche.",
-      "cta.btn": "Appelez 514-999-9176",
+      "nav.reviews": "Avis",
+      "nav.faq": "FAQ",
+      "nav.quote": "Soumission",
+      "hero.cta2": "Appelez",
+      "svc.more.tag": "( Autres services )",
+      "svc.3.t": "Livraison de meubles",
+      "svc.3.p": "Ramassage en magasin, achats en salle de montre ou chez un vendeur — livraison de meubles partout à Montréal, avec soin.",
+      "svc.4.t": "Déménagement d'appartement",
+      "svc.4.p": "Studios, 3½, 4½ et condos — déménagements rapides et soignés, avec le levage et le camion inclus.",
+      "svc.5.t": "Déménagement de bureau",
+      "svc.5.p": "Bureaux, chaises, équipement et dossiers — relocalisations en soirée ou la fin de semaine pour limiter les interruptions.",
+      "svc.6.t": "Livraison de matelas",
+      "svc.6.p": "Matelas et sommiers neufs ou usagés, ramassés et livrés, emballés et protégés tout le long.",
+      "svc.7.t": "Entreposage court terme",
+      "svc.7.p": "Entre deux déménagements ou en attente d'une prise de possession? Gardez vos biens en sécurité en entrepôt à court terme.",
+      "quote.tag": "( Soumission gratuite )",
+      "quote.head": "Dites-nous ce que<br>vous déménagez.",
+      "quote.sub": "Remplissez les détails et envoyez — votre demande va directement à notre WhatsApp et on répond vite avec un prix fixe et une heure de ramassage. Sans engagement.",
+      "quote.perk1": "Réponses le jour même, 7 jours sur 7",
+      "quote.perk2": "Réponse par WhatsApp — envoyez vos photos dans le clavardage",
+      "quote.perk3": "Prix fixe et clair — aucune surprise",
+      "quote.f.name": "Votre nom",
+      "quote.f.pickup": "Adresse de ramassage",
+      "quote.f.delivery": "Adresse de livraison",
+      "quote.f.date": "Date souhaitée",
+      "quote.f.phone": "Votre téléphone",
+      "quote.f.items": "Détails des articles",
+      "quote.f.photos": "Photos (facultatif)",
+      "quote.ph.name": "Prénom et nom",
+      "quote.ph.pickup": "Où on ramasse",
+      "quote.ph.delivery": "Où on livre",
+      "quote.ph.phone": "(514) 000-0000",
+      "quote.ph.items": "ex. sofa 3 places + table basse, 2e étage, sans ascenseur",
+      "quote.photos.hint": "On vous demandera de les joindre dans le clavardage WhatsApp qui s'ouvre.",
+      "quote.submit": "Envoyer par WhatsApp",
+      "quote.or": "Préférez appeler?",
+      "rev.tag": "( Avis clients )",
+      "rev.head": "Approuvé partout<br>à Montréal.",
+      "rev.count": "selon 120+ contrats locaux",
+      "rev.1.t": "Acheté un sofa sectionnel sur Marketplace à Laval sans moyen de le ramener. Ramassé le jour même, emballé et installé dans mon salon. Impeccable.",
+      "rev.1.n": "— Marie-Pier L., Ahuntsic",
+      "rev.2.t": "Utilisés pour un déménagement de 4½ sur le Plateau. À l'heure, rapides, soigneux avec les murs et les escaliers. Bien moins cher que les grosses compagnies.",
+      "rev.2.n": "— David R., Le Plateau",
+      "rev.3.t": "Matelas et cadre de lit livrés dans le West Island quelques heures après mon message WhatsApp. Sympathiques, prix honnêtes, aucune surprise.",
+      "rev.3.n": "— Sarah K., Pierrefonds",
+      "faq.tag": "( FAQ )",
+      "faq.head": "Bon<br>à savoir.",
+      "faq.sub": "Prix, assurance, secteurs et le reste. Une autre question? <a href=\"#quote\" style=\"color:var(--accent,#E63329);text-decoration:none;font-weight:700;\">Demandez une soumission.</a>",
+      "faq.q1": "Combien ça coûte?",
+      "faq.a1": "Le prix est fixe et clair, selon la distance, la taille et le nombre d'articles — pas de compteur à la minute. Envoyez-nous les détails pour une soumission gratuite et vous saurez le prix total avant qu'on parte.",
+      "faq.q2": "Mes articles sont-ils assurés?",
+      "faq.a2": "Oui — on est assurés et chaque chargement est emballé et sanglé. Vos articles sont protégés du ramassage à la livraison. Preuve d'assurance sur demande.",
+      "faq.q3": "Quels secteurs desservez-vous?",
+      "faq.a3": "Toute l'île de Montréal, le West Island, Laval et le Grand Montréal. Un peu plus loin? Écrivez-nous — on couvre souvent les régions environnantes aussi.",
+      "faq.q4": "En combien de temps pouvez-vous venir?",
+      "faq.a4": "Souvent le jour même. On travaille 7 jours sur 7, soirs et fins de semaine inclus. Dites-nous votre date souhaitée et on confirme une heure de ramassage qui vous convient.",
+      "faq.q5": "Faites-vous les déménagements complets et l'entreposage?",
+      "faq.a5": "Oui — déménagements d'appartement et de bureau, livraison de meubles et de matelas, plus l'entreposage à court terme entre deux déménagements.",
+      "faq.q6": "Comment payer?",
+      "faq.a6": "Virement Interac, comptant ou carte. Vous obtenez le prix fixe convenu avant le travail — aucuns frais cachés.",
+      "loc.tag": "( Nous trouver )",
+      "loc.head": "Basés à<br>Montréal.",
+      "loc.addr.label": "Notre adresse",
+      "loc.areas.label": "Secteurs desservis",
+      "loc.areas": "Île de Montréal · West Island · Laval · Grand Montréal",
+      "loc.cta": "Itinéraire →",
+      "cta.head": "Prêts quand<br><span class=\"accent\">vous l'êtes.</span>",
+      "cta.sub": "Dites-nous ce que vous déménagez et où. On envoie un prix fixe et une heure de ramassage qui marche — souvent le jour même.",
+      "cta.btn": "Soumission gratuite",
+      "cta.btn2": "Réservez",
+      "cta.btn3": "Appelez",
+      "wa.label": "WhatsApp",
       "foot.about": "Livraison en camionnette pour vos trouvailles Marketplace et de seconde main, fièrement basée à Montréal, Québec.",
       "foot.touch": "Nous joindre",
       "foot.area": "Zone de service",
@@ -104,6 +242,11 @@
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const k = el.getAttribute("data-i18n");
       if (dict[k] != null) el.innerHTML = dict[k];
+    });
+    // translatable input placeholders
+    document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+      const k = el.getAttribute("data-i18n-ph");
+      if (dict[k] != null) el.setAttribute("placeholder", dict[k]);
     });
     // marquee
     const marq = document.getElementById("ncm-marquee");
@@ -226,5 +369,82 @@
     apply();
   }
 
-  document.addEventListener("DOMContentLoaded", () => { initLang(); initChrome(); requestAnimationFrame(initMotion); });
+  /* ---------------- quote form -> WhatsApp ---------------- */
+  const WA_NUMBER = "15798887555"; // +1 579 888 7555
+
+  function initQuoteForm() {
+    const form = document.getElementById("ncm-quote-form");
+    if (!form) return;
+    const photos = form.querySelector("#q-photos");
+    const hint = document.getElementById("q-photos-hint");
+    const baseHint = hint ? hint.textContent : "";
+    if (photos && hint) {
+      photos.addEventListener("change", () => {
+        const n = photos.files ? photos.files.length : 0;
+        hint.textContent = n ? (n + (n === 1 ? " photo · " : " photos · ") + baseHint) : baseHint;
+      });
+    }
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const val = (id) => (form.querySelector("#" + id) ? form.querySelector("#" + id).value.trim() : "");
+      const fr = document.documentElement.lang === "fr";
+      const n = photos && photos.files ? photos.files.length : 0;
+      const L = fr
+        ? { hi: "Bonjour Nav Can Déménagement Express, j'aimerais une soumission.", name: "Nom", pickup: "Ramassage", delivery: "Livraison", date: "Date souhaitée", phone: "Téléphone", items: "Articles", pc: " photo(s) à joindre dans ce clavardage" }
+        : { hi: "Hi Nav Can Movers Express, I'd like a quote.", name: "Name", pickup: "Pickup", delivery: "Delivery", date: "Preferred date", phone: "Phone", items: "Items", pc: " photo(s) to attach in this chat" };
+      const lines = [L.hi, ""];
+      const add = (label, v) => { if (v) lines.push(label + ": " + v); };
+      add(L.name, val("q-name"));
+      add(L.pickup, val("q-pickup"));
+      add(L.delivery, val("q-delivery"));
+      add(L.date, val("q-date"));
+      add(L.phone, val("q-phone"));
+      add(L.items, val("q-items"));
+      if (n > 0) lines.push("📷 " + n + L.pc);
+      const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+      window.open(url, "_blank");
+    });
+  }
+
+  /* ---------------- FAQ accordion ---------------- */
+  function initFaq() {
+    const root = document.getElementById("ncm-faq");
+    if (!root) return;
+    const items = Array.from(root.querySelectorAll(".ncm-faq-item"));
+    items.forEach((item) => {
+      const btn = item.querySelector(".ncm-faq-q");
+      const ans = item.querySelector(".ncm-faq-a");
+      if (!btn || !ans) return;
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", () => {
+        const isOpen = item.getAttribute("aria-expanded") === "true";
+        items.forEach((other) => {
+          if (other !== item) {
+            other.setAttribute("aria-expanded", "false");
+            const ob = other.querySelector(".ncm-faq-q");
+            const oa = other.querySelector(".ncm-faq-a");
+            if (ob) ob.setAttribute("aria-expanded", "false");
+            if (oa) oa.style.maxHeight = "0px";
+          }
+        });
+        if (isOpen) {
+          item.setAttribute("aria-expanded", "false");
+          btn.setAttribute("aria-expanded", "false");
+          ans.style.maxHeight = "0px";
+        } else {
+          item.setAttribute("aria-expanded", "true");
+          btn.setAttribute("aria-expanded", "true");
+          ans.style.maxHeight = ans.scrollHeight + "px";
+        }
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initLang();
+    initChrome();
+    initQuoteForm();
+    initFaq();
+    requestAnimationFrame(initMotion);
+  });
 })();
