@@ -112,7 +112,7 @@
     -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
     border-bottom-color: rgba(255,255,255,0.08); padding-top: 16px; padding-bottom: 16px; }
   #ncm-root header a img { transition: transform .5s cubic-bezier(.16,1,.3,1), box-shadow .4s ease; }
-  #ncm-root header a:hover img { transform: translateY(-2px) rotate(-1.5deg); box-shadow: 0 10px 26px rgba(0,0,0,0.55); }
+  #ncm-root header a:hover img { transform: translateY(-2px) scale(1.05); }
 
   /* nav links: elegant animated underline */
   .ncm-navlink { position: relative; }
@@ -232,7 +232,7 @@
   <!-- ============ HEADER ============ -->
   <header style="position:sticky;top:0;z-index:60;display:flex;align-items:flex-start;justify-content:space-between;padding:26px 32px;background:linear-gradient(to bottom,rgba(12,12,12,0.92),rgba(12,12,12,0));">
     <a href="#" aria-label="Nav Can Déménagement Express — back to top" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;">
-      <img src="assets/img/logo.jpg" alt="Nav Can Déménagement Express logo" width="1254" height="1254" style="width:56px;height:56px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,0.14);box-shadow:0 4px 18px rgba(0,0,0,0.45);flex:none;">
+      <img src="assets/img/logo.png" alt="Nav Can Déménagement Express logo" width="1024" height="1024" style="width:60px;height:60px;object-fit:contain;flex:none;">
       <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;line-height:1.18;letter-spacing:0.01em;text-transform:uppercase;">
         <span data-i18n="brand.name">Nav Can Movers Express</span><span style="vertical-align:super;font-size:0.6em;">®</span><br>
         <span style="font-weight:600;color:#9a9a9a;font-size:0.82em;letter-spacing:0.04em;" data-i18n="brand.tag">Marketplace Pickup &amp; Delivery</span>
@@ -597,10 +597,6 @@
           <div class="ncm-faq-a"><div class="ncm-faq-a-inner" data-i18n="faq.a1">Pricing is flat and upfront, based on distance, size and the number of items — not a per-minute meter. Send us the details for a free quote and you'll know the full price before we roll out.</div></div>
         </div>
         <div class="ncm-faq-item" aria-expanded="false">
-          <button class="ncm-faq-q" type="button"><span data-i18n="faq.q2">Are my items insured?</span><span class="ico" aria-hidden="true"></span></button>
-          <div class="ncm-faq-a"><div class="ncm-faq-a-inner" data-i18n="faq.a2">Yes — we're insured and every load is wrapped in blankets and strapped down. Your items are protected from pickup to drop-off. Proof of insurance is available on request.</div></div>
-        </div>
-        <div class="ncm-faq-item" aria-expanded="false">
           <button class="ncm-faq-q" type="button"><span data-i18n="faq.q3">Which areas do you serve?</span><span class="ico" aria-hidden="true"></span></button>
           <div class="ncm-faq-a"><div class="ncm-faq-a-inner" data-i18n="faq.a3">All of Montreal Island, the West Island, Laval and Greater Montreal. Going a bit further? Message us — we often cover the surrounding regions too.</div></div>
         </div>
@@ -694,7 +690,7 @@
   <footer style="background:#0c0c0c;color:#fefefe;padding:80px 32px 40px;">
     <div style="display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;border-bottom:1px solid #2a2a2a;padding-bottom:48px;">
       <div style="max-width:360px;">
-        <img src="assets/img/logo.jpg" alt="Nav Can Déménagement Express logo" width="1254" height="1254" style="width:84px;height:84px;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,0.1);margin-bottom:18px;">
+        <img src="assets/img/logo.png" alt="Nav Can Déménagement Express logo" width="1024" height="1024" style="width:104px;height:104px;object-fit:contain;margin-bottom:16px;margin-left:-6px;">
         <div data-i18n="brand.name" style="font-family:'Anton',sans-serif;font-size:24px;text-transform:uppercase;margin-bottom:16px;">Nav Can Movers Express</div>
         <p data-i18n="foot.about" style="font-size:1rem;line-height:1.5;color:#8a8a8a;margin:0;">Pickup-truck delivery for your Marketplace &amp; second-hand finds, proudly based in Montreal, Quebec.</p>
       </div>
