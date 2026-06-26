@@ -484,11 +484,33 @@
     });
   }
 
+  /* ---------------- mobile nav (hamburger) ---------------- */
+  function initBurger() {
+    const burger = document.getElementById("ncm-burger");
+    const nav = document.getElementById("ncm-nav");
+    if (!burger || !nav) return;
+    const close = () => {
+      nav.classList.remove("open");
+      burger.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    };
+    burger.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+      burger.classList.toggle("open", isOpen);
+      burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+    // close after tapping a link (lang buttons are <button>, so they don't close it)
+    nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 820) close(); }, { passive: true });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     initLang();
     initChrome();
     initQuoteForm();
     initFaq();
+    initBurger();
     requestAnimationFrame(initMotion);
   });
 })();
