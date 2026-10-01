@@ -138,6 +138,7 @@
       "foot.follow": "Follow",
       "foot.copy": "© Nav Can Movers Express — Montreal, QC",
       "foot.lic": "Licensed & insured · RBQ on request",
+      "foot.credit": "Powered by <a href=\"https://b12ventures.com\" target=\"_blank\" rel=\"noopener\" style=\"color:#a8a8a8;text-decoration:none;\">B12 Ventures</a>",
       "marq": ["Residential Moving", "Commercial Moving", "Furniture Delivery", "Marketplace Pickup", "Packing & Storage", "Montreal & West Island", "Same-Day Service"]
     },
     fr: {
@@ -276,6 +277,7 @@
       "foot.follow": "Suivez-nous",
       "foot.copy": "© Nav Can Déménagement Express — Montréal, QC",
       "foot.lic": "Licencié et assuré · RBQ sur demande",
+      "foot.credit": "Propulsé par <a href=\"https://b12ventures.com\" target=\"_blank\" rel=\"noopener\" style=\"color:#a8a8a8;text-decoration:none;\">B12 Ventures</a>",
       "marq": ["Déménagement résidentiel", "Déménagement commercial", "Livraison de meubles", "Ramassage Marketplace", "Emballage & entreposage", "Montréal & West Island", "Service le jour même"]
     }
   };
